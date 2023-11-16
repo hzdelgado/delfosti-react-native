@@ -9,10 +9,11 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addMovie } from "../../store/reducers/movieSlice";
 
 const AddMovie = () => {
+  const movies = useSelector((state: any) => state.movie.list);
   const dispatch = useDispatch();
   const [formError, setError] = React.useState<Boolean>(false);
   const {
@@ -22,8 +23,12 @@ const AddMovie = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data: any) => {
-    dispatch(addMovie(data));
-    Alert.alert('Registro exitoso');
+    const found = movies.filter((item: any) => item.title.toLowerCase() == data.title.toLowerCase() || item.description.toLowerCase() == data.description.toLowerCase());
+    if(found) {
+      Alert.alert("La pelicula ya esta registrada");
+      return;
+    }
+    Alert.alert("Registro exitoso");
     setError(false);
     reset();
   };
@@ -91,13 +96,13 @@ const AddMovie = () => {
             name="image"
             rules={{ required: true }}
           />
- <View style={{ flexDirection: "row",}}>
-          <View style={styles.button}>
-            <Button title="Crear" onPress={handleSubmit(onSubmit, onError)} />
-          </View>
-          <View style={styles.button}>
-            <Button title="Limpiar" onPress={()=> reset()} />
-          </View>
+          <View style={{ flexDirection: "row" }}>
+            <View style={styles.button}>
+              <Button title="Crear" onPress={handleSubmit(onSubmit, onError)} />
+            </View>
+            <View style={styles.button}>
+              <Button title="Limpiar" onPress={() => reset()} />
+            </View>
           </View>
         </SafeAreaView>
       }
@@ -130,7 +135,7 @@ const styles = StyleSheet.create({
     borderColor: "#949492",
     padding: 10,
   },
-  
+
   label: {
     color: "black",
     margin: 10,

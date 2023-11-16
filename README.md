@@ -1,37 +1,26 @@
-# Navigation Example
+# App de Peliculas - React Native
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.dev/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+Este proyecto es un ejemplo de una aplicación de películas creado con React Native versión 0.72.3. La aplicación contiene la funcionalidad de listado, y registro y calificación de peliculas.
 
-## 🚀 How to use
+## Clonar el repo
+```shell
+git clone https://github.com/hzdelgado/delfosti-react-native
+cd delfosti-react-native
+```
+## Instalar paquetes NPM
+Instala los paquetes `npm` descritos en el `package.json` y verifica que funcione:
+```shell
+npm install
+npm run <OS>
+```
+El comando `npm run` ejecuta la aplicación en un sistema operativo a elección - las pruebas se hicieron en `android` y `ios`.
 
-- Install packages with `yarn` or `npm install`.
-- Run `yarn start` or `npm run start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
-- When it's time to customize your runtime, refer to the ["Adding custom native code"](https://docs.expo.dev/workflow/customizing/) guide!
+## Test unitarios 
 
-## Publishing
+Ejecuta `npm test` para ejecutar los unit tests con Jest.
 
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.dev/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.dev/distribution/publishing-websites/).
-
-## 📝 Notes
-
-- Learn more about [Universal React](https://docs.expo.dev/).
-- See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
-- Find out more about developing apps and websites: [Official guides](https://docs.expo.dev/guides/).
+## Captura
+| iOS | Android |
+| ------------- | ------------- |
+| ![Simulator Screenshot - iPhone 14 Pro - 2023-11-16 at 155026](https://github.com/hzdelgado/delfosti-react-native/assets/88523514/cb16af80-002f-4a84-8ab9-44dec2ba04aa)  | ![Screenshot_1700167849](https://github.com/hzdelgado/delfosti-react-native/assets/88523514/2dbf98b9-9138-4dc3-887c-0f5bab61b962)
+  |

@@ -14,7 +14,7 @@ Instala los paquetes `npm` descritos en el `package.json` y verifica que funcion
 npm install
 npm run <OS>
 ```
-El comando `npm run` ejecuta la aplicación en un sistema operativo `<OS>` a elección - las pruebas se hicieron en `android` y `ios`. Para realizar pruebas con emuladores, es necesario instalar el software necesario - eje. Android Studio y Xcode.
+El comando `npm run` ejecuta la aplicación en un sistema operativo `<OS>` a elección - las pruebas se hicieron en `android` y `ios`. Para realizar pruebas con emuladores, es necesario instalar el software necesario - eje. [Android Studio](https://developer.android.com/studio) y [Xcode](https://developer.apple.com/xcode/resources/).
 
 ## Test unitarios
 Ejecuta `npm test` para ejecutar los unit tests con Jest.

@@ -6,7 +6,7 @@
       "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
       "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
       "genre": "Drama",
-      "favorite": false
+      "favorite": 0
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "description": "A thief who steals corporate secrets throuhj the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
       "poster": "https://m.media-amazon.com/images/M/MV5BMjExMjkwNTQ0Nl5BMl5BanBnXkFtZTcwNTY0OTk1Mw@@._V1_.jpg",
       "genre": "Action",
-      "favorite": false
+      "favorite": 0
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
       "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
       "genre": "Action",
-      "favorite": false
+      "favorite": 0
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
       "poster": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
       "genre": "Crime",
-      "favorite": false
+      "favorite": 0
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
       "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
       "genre": "Crime",
-      "favorite": false
+      "favorite": 0
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "description": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.",
       "poster": "https://m.media-amazon.com/images/M/MV5BODQ0OWJiMzktYjNlYi00MzcwLThlZWMtMzRkYTY4ZDgxNzgxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
       "genre": "Drama",
-      "favorite": false
+      "favorite": 0
     }
   ],
   "genres": ["Drama", "Action", "Crime"]

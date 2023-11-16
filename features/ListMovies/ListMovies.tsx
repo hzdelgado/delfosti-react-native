@@ -20,19 +20,9 @@ const ListMovies = () => {
     <ScrollView>
       <View>
         {movies.map((movie: any, index: number) => {
-
-
           return (
             <View key={index} style={styles.container}>
               <View style={{ flexDirection: "row" }}>
-              <View>
-                  {!movie.favorite ? (
-                    <TabBarIcon name="star-outline" color={Colors.favorite} />
-                  ) : (
-                    <TabBarIcon name="star" color={Colors.disabled} />
-                  )}
-                  <Text />
-                </View>
                 <Image
                   style={styles.image}
                   source={{
@@ -42,13 +32,26 @@ const ListMovies = () => {
                 <Text style={styles.title}>{movie.title}</Text>
               </View>
               <Text style={styles.subtitle}>{movie.description}</Text>
-              <TouchableHighlight onPress={() => {
-                movie = {...movie, favorite: !movie.favorite};
-                console.log(movie);
-                dispatch(updateMovie(movie));
-              }}>
-                
-              </TouchableHighlight>
+
+              <View style={{ flexDirection: "row", gap: 3 }}>
+                <TouchableHighlight
+                  onPress={() => {
+                    movie = { ...movie, favorite: 1 };
+                    dispatch(updateMovie(movie));
+                  }}
+                >
+                  <TabBarIcon name="thumbs-up" color={ movie.favorite == 1? "green": (movie.favorite == 2? "grey": "grey")} />
+                </TouchableHighlight>
+
+                <TouchableHighlight
+                  onPress={() => {
+                    movie = { ...movie, favorite: 2 };
+                    dispatch(updateMovie(movie));
+                  }}
+                >
+                  <TabBarIcon name="thumbs-down" color={ movie.favorite == 1? "grey": (movie.favorite == 2? "green": "grey")} />
+                </TouchableHighlight>
+              </View>
             </View>
           );
         })}

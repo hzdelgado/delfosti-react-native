@@ -16,4 +16,10 @@ export default {
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
   },
+  favorite: {
+    text: "#c92222",
+  },
+  disabled: {
+    text: "#8a8787",
+  },
 };

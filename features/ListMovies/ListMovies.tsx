@@ -1,16 +1,38 @@
 import React from "react";
-import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
-import { useSelector } from "react-redux";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableHighlight,
+} from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import Colors from "../../constants/Colors";
+import { TabBarIcon } from "../../navigation/BottomTabNavigator";
+import { updateMovie } from "../../store/reducers/movieSlice";
 
 const ListMovies = () => {
   const movies = useSelector((state: any) => state.movie.list);
+  const dispatch = useDispatch();
+
   return (
     <ScrollView>
       <View>
         {movies.map((movie: any, index: number) => {
+
+
           return (
             <View key={index} style={styles.container}>
-              <View style={{ flexDirection: "row"}}>
+              <View style={{ flexDirection: "row" }}>
+              <View>
+                  {!movie.favorite ? (
+                    <TabBarIcon name="star-outline" color={Colors.favorite} />
+                  ) : (
+                    <TabBarIcon name="star" color={Colors.disabled} />
+                  )}
+                  <Text />
+                </View>
                 <Image
                   style={styles.image}
                   source={{
@@ -20,6 +42,13 @@ const ListMovies = () => {
                 <Text style={styles.title}>{movie.title}</Text>
               </View>
               <Text style={styles.subtitle}>{movie.description}</Text>
+              <TouchableHighlight onPress={() => {
+                movie = {...movie, favorite: !movie.favorite};
+                console.log(movie);
+                dispatch(updateMovie(movie));
+              }}>
+                
+              </TouchableHighlight>
             </View>
           );
         })}
@@ -34,7 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
     flex: 1,
     flexDirection: "column",
-    gap: 5
+    gap: 5,
   },
   title: {
     padding: 20,

@@ -5,7 +5,8 @@
       "title": "The Shawshank Redemption",
       "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
       "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
-      "genre": "Drama"
+      "genre": "Drama",
+      "favorite": false
     },
     {
       "id": 2,

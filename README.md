@@ -7,16 +7,16 @@ Este proyecto es un ejemplo de una aplicación de películas creado con React Na
 git clone https://github.com/hzdelgado/delfosti-react-native
 cd delfosti-react-native
 ```
+
 ## Instalar paquetes NPM
 Instala los paquetes `npm` descritos en el `package.json` y verifica que funcione:
 ```shell
 npm install
 npm run <OS>
 ```
-El comando `npm run` ejecuta la aplicación en un sistema operativo `<OS>` a elección - las pruebas se hicieron en `android` y `ios`.
+El comando `npm run` ejecuta la aplicación en un sistema operativo `<OS>` a elección - las pruebas se hicieron en `android` y `ios`. 
 
-## Test unitarios 
-
+## Test unitarios
 Ejecuta `npm test` para ejecutar los unit tests con Jest.
 
 ## Captura

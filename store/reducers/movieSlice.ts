@@ -1,19 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit'
 import res from "../../assets/data/dummy-movies.json";
+import { Movie } from '../../models/movie';
 
-//Al refrescar, los cambios se perderan y el utilizara el estado inicial. Este no seria el caso en un escenario en donde se obtiene la data del backend.
+
+type State = {
+  list: Movie[]
+}
+
 export const movieSlice = createSlice({
   name: 'movie',
   initialState: {
     list: res.movies,
   },
   reducers: {
-    addMovie: (state, action) => {
-      state.list = [...state.list, action.payload];
+    addMovie: (state: State, action) => {
+      const movies = [...state.list, action.payload];
+      return {...state, list: movies};
     },
-    updateMovie: (state, action) => {
+    updateMovie: (state: State, action) => {
       var founds = state.list.filter(item => item.id != action.payload.id);
-      state.list = [...founds, action.payload];
+      const movies = [...founds, action.payload];
+      return {...state, list: movies};
     },
   },
 })

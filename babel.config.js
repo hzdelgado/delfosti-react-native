@@ -8,6 +8,7 @@ module.exports = function (api) {
           // Use React 17 automatic JSX runtime.
           jsxRuntime: "automatic",
         },
+        '@babel/preset-typescript',
       ],
     ],
     plugins: ["react-native-reanimated/plugin"],

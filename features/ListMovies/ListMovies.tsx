@@ -7,21 +7,20 @@ import {
   Image,
   TouchableHighlight,
 } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import Colors from "../../constants/Colors";
 import { TabBarIcon } from "../../navigation/BottomTabNavigator";
 import { updateMovie } from "../../store/reducers/movieSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 
 const ListMovies = () => {
-  const movies = useSelector((state: any) => state.movie.list);
-  const dispatch = useDispatch();
+  const movies = useAppSelector((state: any) => state.movie.list);
+  const dispatch = useAppDispatch();
 
   return (
     <ScrollView>
-      <View>
+      <View testID="movieList">
         {movies.map((movie: any, index: number) => {
           return (
-            <View key={index} style={styles.container}>
+            <View key={index} testID={index.toString()} style={styles.container}>
               <View style={{ flexDirection: "row" }}>
                 <Image
                   style={styles.image}
@@ -35,6 +34,7 @@ const ListMovies = () => {
 
               <View style={{ flexDirection: "row", gap: 3 }}>
                 <TouchableHighlight
+                  key={`thumbsUp${index}`}
                   onPress={() => {
                     movie = { ...movie, favorite: 1 };
                     dispatch(updateMovie(movie));

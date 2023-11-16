@@ -1,5 +1,10 @@
-import React from "react";
-import { Controller, SubmitErrorHandler, useForm } from "react-hook-form";
+import React, { useEffect } from "react";
+import {
+  Controller,
+  FieldValues,
+  SubmitErrorHandler,
+  useForm,
+} from "react-hook-form";
 import {
   Alert,
   Button,
@@ -9,25 +14,34 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { addMovie } from "../../store/reducers/movieSlice";
+import { Movie } from "../../models/movie";
 
 const AddMovie = () => {
-  const movies = useSelector((state: any) => state.movie.list);
-  const dispatch = useDispatch();
+  const movies = useAppSelector((state: any) => state.movie.list);
+  const dispatch = useAppDispatch();
   const [formError, setError] = React.useState<Boolean>(false);
-  const {
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data: any) => {
-    const found = movies.filter((item: any) => item.title.toLowerCase() == data.title.toLowerCase() || item.description.toLowerCase() == data.description.toLowerCase());
-    if(found) {
+  const { handleSubmit, control, reset, setValue } = useForm();
+  const onSubmit = (data: FieldValues) => {
+
+    const found = movies.filter(
+      (item: any) =>
+        item.title.toLowerCase() == data.title.toLowerCase() ||
+        item.description.toLowerCase() == data.description.toLowerCase()
+    );
+    if (found.length > 0) {
       Alert.alert("La pelicula ya esta registrada");
+      setError(false);
       return;
     }
+
+    if (formError) {
+      return;
+    }
+
+    const movie = data as Movie;
+    dispatch(addMovie(movie));
     Alert.alert("Registro exitoso");
     setError(false);
     reset();
@@ -46,7 +60,9 @@ const AddMovie = () => {
     <View style={styles.container}>
       {formError && (
         <View>
-          <Text style={{ color: "red" }}>Todos los campos son requeridos.</Text>
+          <Text testID="errorMsg" style={{ color: "red" }}>
+            Todos los campos son requeridos.
+          </Text>
         </View>
       )}
       {
@@ -60,6 +76,7 @@ const AddMovie = () => {
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
+                testID="title"
               />
             )}
             name="title"
@@ -77,6 +94,7 @@ const AddMovie = () => {
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
+                testID="description"
               />
             )}
             name="description"
@@ -91,17 +109,28 @@ const AddMovie = () => {
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
+                testID="image"
               />
             )}
-            name="image"
+            name="poster"
             rules={{ required: true }}
           />
           <View style={{ flexDirection: "row" }}>
             <View style={styles.button}>
-              <Button title="Crear" onPress={handleSubmit(onSubmit, onError)} />
+              <Button
+                title="Crear"
+                onPress={handleSubmit(onSubmit, onError)}
+                testID="createBtn"
+              />
             </View>
             <View style={styles.button}>
-              <Button title="Limpiar" onPress={() => reset()} />
+              <Button
+                title="Limpiar"
+                onPress={() => {
+                  reset();
+                }}
+                testID="cleanBtn"
+              />
             </View>
           </View>
         </SafeAreaView>

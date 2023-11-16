@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 20,
     fontWeight: "bold",
+    overflow: "hidden",
     marginTop: 5,
   },
   image: {

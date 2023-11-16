@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import ListMovies from "../components/ListMovies";
+import ListMovies from "../features/ListMovies/ListMovies";
 
 export default function TabOneScreen() {
   return (
@@ -14,14 +14,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
   },
 });

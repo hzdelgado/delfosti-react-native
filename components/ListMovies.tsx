@@ -1,13 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
-import res from "../assets/data/dummy-movies.json";
+import { useSelector } from "react-redux";
 
 const ListMovies = () => {
-  console.log(res);
+  const movies = useSelector((state: any) => state.movie.list);
   return (
     <ScrollView>
       <View>
-        {res.movies.map((movie, index) => {
+        {movies.map((movie: any, index: number) => {
           return (
             <View key={index} style={styles.container}>
               <View style={{ flexDirection: "row"}}>
@@ -31,6 +31,7 @@ const ListMovies = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 50,
+    backgroundColor: "#ffffff",
     flex: 1,
     flexDirection: "column",
     gap: 5

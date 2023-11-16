@@ -13,7 +13,7 @@ Instala los paquetes `npm` descritos en el `package.json` y verifica que funcion
 npm install
 npm run <OS>
 ```
-El comando `npm run` ejecuta la aplicación en un sistema operativo a elección - las pruebas se hicieron en `android` y `ios`.
+El comando `npm run` ejecuta la aplicación en un sistema operativo `<OS>` a elección - las pruebas se hicieron en `android` y `ios`.
 
 ## Test unitarios 
 

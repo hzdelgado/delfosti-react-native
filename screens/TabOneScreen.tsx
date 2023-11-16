@@ -1,7 +1,6 @@
-import { StyleSheet } from "react-native";
-
-import { View } from "../components/Themed";
+import { StyleSheet, View } from "react-native";
 import ListMovies from "../components/ListMovies";
+
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>

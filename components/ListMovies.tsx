@@ -19,7 +19,7 @@ const ListMovies = () => {
                 />
                 <Text style={styles.title}>{movie.title}</Text>
               </View>
-              <Text style={styles.suubtitle}>{movie.description}</Text>
+              <Text style={styles.subtitle}>{movie.description}</Text>
             </View>
           );
         })}
